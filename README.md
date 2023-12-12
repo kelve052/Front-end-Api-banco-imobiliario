@@ -1,6 +1,7 @@
-# Api-banco-imobiliario
+# Sistema de gerenciamente de trasações de jogadores de de um bamco imobiliário
 
 API em Node.js usando Express.
+Front-end usando next. (readme está dentro de frontend/[Readme](frontend/README.md))
 
 Sistema que realiza o gerenciamento de jogadores do jogo Banco Imobiliário.
 - Cadastro de players
@@ -212,7 +213,6 @@ Infelizmente, o projeto ainda não possui testes!
 
 ## Figma
 https://www.figma.com/file/UdCIXdqjEwe1PuSxsYkala/Untitled?type=design&node-id=0%3A1&mode=design&t=94urJ4ptsliXfpfq-1
-- Em breve o front-End!
 
 ## Autores
 - [@Kelve Oliveira](https://github.com/kelve052)

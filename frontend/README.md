@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-end banco-imobiliario
 
-## Getting Started
+Front-end com comunicação com api (node.js express) usando next.js.
 
-First, run the development server:
+Sistema que realiza o gerenciamento de jogadores do jogo Banco Imobiliário.
+- Cadastro de players
+- Cadastro de bancos
+- Cadastro de registros de transações
+- Atualização de players
+- Atualização de bancos
+- Deleção de players
+- Deleção de bancos
+- Deleção de registros
+
+## Índice
+
+- [Instalação](#instalação)
+- [Configuração](#configuração)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Exemplos](#exemplos)
+- [Testes](#testes)
+- [Figma](#figma)
+- [Autores](#autores)
+
+## Instalação
 
 ```bash
+git clone https://github.com/kelve052/Front-end-banco-imobiliario.git
+cd Front-end-banco-imobiliario
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuração
+- para iniciar a api
+Antes de executar a aplicação, é necessário configurar algumas variáveis de ambiente e parâmetros. Siga as etapas abaixo para configurar a aplicação corretamente.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Variáveis de Ambiente
+   Crie um arquivo .env na raiz do projeto e defina as seguintes variáveis de ambiente:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   ```env
+   MONGO_URI=suaVariavelAmbiente
+   JWT_SECRET=tokenSecret
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+src
+    ├───controllers
+    ├───database
+    ├───middleware
+    ├───model
+    ├───repositories
+    ├───router
+    └───services
+├── aplicacao.js
+└── server.js
+```
 
-## Learn More
+## Testes
 
-To learn more about Next.js, take a look at the following resources:
+Infelizmente, o projeto ainda não possui testes!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Figma
+https://www.figma.com/file/UdCIXdqjEwe1PuSxsYkala/Untitled?type=design&node-id=0%3A1&mode=design&t=94urJ4ptsliXfpfq-1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Autores
+- [@Kelve Oliveira](https://github.com/kelve052)
