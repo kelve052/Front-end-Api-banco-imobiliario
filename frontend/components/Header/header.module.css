@@ -1,0 +1,31 @@
+.header{
+  width: 328px;
+  height: 50px;
+  background-color: #8E44AD;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  align-items: center;
+}
+.div_logo_h1{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.logo{
+  /* size defined in the element */
+  width: 30px;
+  height: 30px;
+}
+.h1{
+  color:  #FFF;
+  font-family: IBM Plex Sans Devanagari;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.iconSettings{
+
+}

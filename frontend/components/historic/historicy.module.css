@@ -1,0 +1,68 @@
+.historicyRed{
+  
+  height: 24px;
+  border-radius: 1px;
+  background-color: rgba(231, 76, 60, 0.2);
+  display: flex;
+  gap: 8px;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 4px;
+}
+
+.historicyGreen{
+  
+  height: 24px;
+  border-radius: 1px;
+  background-color: rgba(0, 162, 33, 0.2);
+  display: flex;
+  gap: 8px;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 4px;
+}
+.div_name_profile{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.div_name_profile img{
+  /* size defined in the element */
+}
+.div_name_profile p{
+  color: var(--Cor-texto, #FFF);
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.type{
+  color: #FFF;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+/* formatação do valor do saldo */
+.type_sent{
+  color: #E74C3C;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.type_received{
+  color: #00A221;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
