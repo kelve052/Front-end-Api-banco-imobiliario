@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
 .index{
-  max-width: 360px;
+  width: 360px;
+  height: 800px;
   margin: auto;
   background-color: #382C6E;
 }
