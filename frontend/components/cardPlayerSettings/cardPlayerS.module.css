@@ -4,10 +4,11 @@ font is only used in balance teaxt */
 
 .cardPlayerSettings{
   width: 360px;
-  background-color: rgba(217, 217, 217, 0.5);
-  height: 66px;
+  background-color: rgba(217, 217, 217, 0.2);
+  height: auto;
   padding: 8px 0;
   margin: 2px 0;
+  display: block;
 }
 .blockAll{
   padding: 0 30px;
@@ -24,6 +25,7 @@ font is only used in balance teaxt */
 }
 .div_fhotoProfile_name_balance{
   display: flex;
+  gap: 8px;
 }
 .div_name_balance{
   
@@ -51,6 +53,7 @@ font is only used in balance teaxt */
 .div_pencil_trash{
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 .link_exibir_historico{
   color: #F1C40F;
@@ -62,6 +65,15 @@ font is only used in balance teaxt */
   text-decoration-line: underline;
 }
 .div_exibir_historico{
-  background-color: #382C6E;
+  width: auto;
+  padding: 0;
+  max-height: 0;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+.linkBlock{
+  max-height: 800px;
   padding: 6px 30px;
+  transition: max-height 0.5s ease-in-out;
+  width: 300px;
 }

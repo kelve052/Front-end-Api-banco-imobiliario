@@ -8,6 +8,8 @@ export default function Home() {
     <section className={styles.index}>
      <Header  />
      <CardPlayerSetings img={"/images/team/team1.png"} name="João" balance="1000"/>
+     <CardPlayerSetings img={"/images/team/team1.png"} name="João" balance="1000"/>
+     <CardPlayerSetings img={"/images/team/team1.png"} name="João" balance="1000"/>
     </section>
   )
 }
