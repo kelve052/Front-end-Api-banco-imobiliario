@@ -1,6 +1,6 @@
 .main{
   width: 360px;
-  height: 800px;
+  min-height: 800px;
   margin: auto;
   background-color: #382C6E;
 }
@@ -69,10 +69,53 @@
 .div_icons_equipe{
   display: flex;
   justify-content: space-between;
+  height: 60px;
 }
 .time_selecionado{
   border: 5px solid #00A221;
   transition: 0.2s;
   border-radius: 250px;
   transform: scale(1.1);
+}
+.botao_adicionar{
+  width: 317px;
+  height: 36px;
+  border-radius: 5px;
+  border: none;
+  background-color:  #4381C1;
+  cursor: pointer;
+  margin-top: 28px;
+
+  color: #fff;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h3_Participantes{
+  color: #FFF;
+  font-family: Quicksand;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.botao_resetar{
+  width: 317px;
+  height: 36px;
+  border-radius: 5px;
+  border: none;
+  background-color: #D64254;
+  cursor: pointer;
+  margin-top: 28px;
+
+  color: #fff;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

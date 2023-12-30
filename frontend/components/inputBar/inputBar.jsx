@@ -2,6 +2,13 @@ import { useEffect, useState } from 'react'
 import styleImput  from './inputBar.module.css'
 
 export default function InputBar (props) {
+  //PROPS->
+  //[isBanck] bloker input: (true / false)
+  //[text] add title in input
+  //[name] add name in tag of input
+  //[placeholder] add placeholder in input
+  //[width] defined width input
+
   const [cor, userCor] = useState("#ffffff")
   useEffect(()=>{
     if(props.valueInvalid == true){
@@ -19,8 +26,8 @@ export default function InputBar (props) {
   }
   return(
     <div lassName={styleImput.inputBar}>
-      <p className={styleImput.p_text}>{props.text}</p>
-      <input onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.width, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={styleImput.input} />
+      <p className={`${styleImput.p_text} ${props.isBanck? `${styleImput.input_opacity}`: ''}`}>{props.text}</p>
+      <input readOnly={props.isBanck} name={props.name} onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.width, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={`${styleImput.input} ${props.isBanck? `${styleImput.input_opacity}`: ''}`} />
     </div>
   )
 }

@@ -3,7 +3,6 @@
 font is only used in balance teaxt */
 
 .cardPlayerSettings{
-  width: 360px;
   background-color: rgba(217, 217, 217, 0.2);
   height: auto;
   padding: 8px 0;
@@ -54,6 +53,7 @@ font is only used in balance teaxt */
   display: flex;
   gap: 16px;
   justify-content: center;
+  cursor: pointer;
 }
 .link_exibir_historico{
   color: #F1C40F;
@@ -76,4 +76,21 @@ font is only used in balance teaxt */
   padding: 6px 30px;
   transition: max-height 0.5s ease-in-out;
   width: 300px;
+}
+
+/* css case props.pageAddPlayer == true */
+.ocultar_elemento{
+  display: none;
+}
+.div_name_balance_pageAdd{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 218px;
+}
+.retirar_background{
+  background-color: #382C6E;
+}
+.retirar_background .blockAll{
+  padding: 0 15px;
 }
