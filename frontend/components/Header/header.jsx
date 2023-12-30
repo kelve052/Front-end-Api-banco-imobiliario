@@ -5,7 +5,7 @@ import styleHeader from "./header.module.css"
 export default function Header (props){
   let srcImage = "/images/icons/settings.png"
   let link = "/settings"
-  if(props.transactionScrean == true){// tela de participantes
+  if(props.pageAddPlayer == true){// tela de participantes
     srcImage = "/images/icons/play.png"
     link = "/transactions"
   }

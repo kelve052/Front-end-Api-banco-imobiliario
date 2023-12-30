@@ -20,7 +20,7 @@ export default function InputBar (props) {
   return(
     <div lassName={styleImput.inputBar}>
       <p className={styleImput.p_text}>{props.text}</p>
-      <input onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.widthImput, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={styleImput.input} />
+      <input onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.width, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={styleImput.input} />
     </div>
   )
 }

@@ -14,7 +14,7 @@
   width: 124px;
   height: 36px;
   border-radius: 5px;
-  border: 3px solid #FFF;
+  border: 1.5px solid #FFF;
   outline: none;
   background-color: transparent;
 
@@ -24,4 +24,5 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-left: 12px;
 }
