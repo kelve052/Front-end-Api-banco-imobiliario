@@ -25,6 +25,7 @@ font is only used in balance teaxt */
 .div_fhotoProfile_name_balance{
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 .div_name_balance{
   
@@ -78,7 +79,7 @@ font is only used in balance teaxt */
   width: 300px;
 }
 
-/* css case props.pageAddPlayer == true */
+/* css case props.pageAddPlayer == 2 or 3 */
 .ocultar_elemento{
   display: none;
 }
@@ -94,3 +95,17 @@ font is only used in balance teaxt */
 .retirar_background .blockAll{
   padding: 0 15px;
 }
+.div_name_balance_pageTrasac .name{
+  font-family: Quicksand;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  
+}
+.div_name_balance_pageTrasac .balance{
+  font-family: Quicksand;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }

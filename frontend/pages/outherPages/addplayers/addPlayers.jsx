@@ -2,7 +2,7 @@ import Header from "@/components/Header/header"
 import styleAddP from "./addPlayers.module.css"
 import InputBar from "@/components/inputBar/inputBar"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import CardPlayerSetings from "@/components/cardPlayerSettings/cardPlayerSttings"
 
 export default function AddPlayers() {
@@ -18,11 +18,11 @@ export default function AddPlayers() {
   };
 
   return (
-    <main className={styleAddP.main}>
-      <Header pageAddPlayer={true} />
+    <section className={styleAddP.section_global}>
+      <Header iconAcition={2} />
       <h1 className={styleAddP.h1_adiciona_part}>Adicionar participante</h1>
 
-      <section className={styleAddP.section_inputs}>
+      <main className={styleAddP.section_inputs}>
         <InputBar name='nome' text="Nome" width={312} placeholder={"arradador42"} />
         <InputBar isBanck={checkboxMark} name='senha' text="Senha" width={312} placeholder={"$textd123"} />
         <div className={styleAddP.div_imput_checkbox}>
@@ -59,15 +59,15 @@ export default function AddPlayers() {
         <div className={styleAddP.div_participantes}>
           <h3 className={styleAddP.h3_Participantes}>Participantes</h3>
           <div className={styleAddP.div_players_adicionado}>
-            <CardPlayerSetings pageAddPlayers={true} balance='1.554,00' name='Maria' img='/images/team/team1.png' />
-            <CardPlayerSetings pageAddPlayers={true} balance='1.554,00' name='Ana' img='/images/team/team6.png' />
-            <CardPlayerSetings pageAddPlayers={true} balance='1.554,00' name='Beatris' img='/images/team/team4.png' />
-            <CardPlayerSetings pageAddPlayers={true} balance='1.554,00' name='Pedro' img='/images/team/team5.png' />
-            <CardPlayerSetings pageAddPlayers={true} balance='1.554,00' name='João Batista' img='/images/team/team2.png' />
+            <CardPlayerSetings styleComponent={2} balance='1.554,00' name='Maria' img='/images/team/team1.png' />
+            <CardPlayerSetings styleComponent={2} balance='1.554,00' name='Ana' img='/images/team/team6.png' />
+            <CardPlayerSetings styleComponent={2} balance='1.554,00' name='Beatris' img='/images/team/team4.png' />
+            <CardPlayerSetings styleComponent={2} balance='1.554,00' name='Pedro' img='/images/team/team5.png' />
+            <CardPlayerSetings styleComponent={2} balance='1.554,00' name='João Batista' img='/images/team/team2.png' />
           </div>
           <button className={styleAddP.botao_resetar}>Resetar</button>
         </div>
-      </section>
-    </main>
+      </main>
+    </section>
   );
 }
