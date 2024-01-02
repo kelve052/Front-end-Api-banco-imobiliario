@@ -19,7 +19,7 @@ export default function AddPlayers() {
 
   return (
     <section className={styleAddP.section_global}>
-      <Header iconAcition={2} />
+      <Header iconAction={2} />
       <h1 className={styleAddP.h1_adiciona_part}>Adicionar participante</h1>
 
       <main className={styleAddP.section_inputs}>

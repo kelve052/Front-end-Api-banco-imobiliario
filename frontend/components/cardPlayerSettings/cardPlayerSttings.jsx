@@ -18,7 +18,7 @@ const mudarId = ()=>{
 
 
 //PROPS->
-//[styleComponent] case 1, 2 or 3 alter style of component: (1 / 2 / 3)
+//[styleComponent] case 1, 2, 3 or 4 alter style of component: (1 / 2 / 3 /4)
 //[balance] add value in balance
 //[name] add name in player
 //[img] add icon profile in player
@@ -36,12 +36,14 @@ const mudarId = ()=>{
           </div>
           <div className={styleCardP.div_pencil_trash}>
 
-            <Image alt="icon pencil" className={`${styleCardP.iconPencil} ${props.styleComponent == 2 || props.styleComponent == 3?  `${styleCardP.ocultar_elemento}`: ''}`} src={"/images/icons/pencil.png"} width={24} height={24}/>
+            <Link href={`../../outherPages/editPlayer/editdsadasdasd${props.id}`}>
+              <Image alt="icon pencil" className={`${styleCardP.iconPencil} ${props.styleComponent == 2 || props.styleComponent == 3 || props.styleComponent == 4?  `${styleCardP.ocultar_elemento}`: ''}`} src={"/images/icons/pencil.png"} width={24} height={24}/>
+            </Link>
 
             <Image alt="icon trash" className={`${styleCardP.iconTrash} ${props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} src={'/images/icons/trash.png'} width={24} height={24}/>
           </div>
         </div>
-        <Link onClick={mudarId} className={`${styleCardP.link_exibir_historico} ${props.styleComponent == 2 || props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} href={""}>{texto_tag_link}</Link>
+        <a onClick={mudarId} className={`${styleCardP.link_exibir_historico} ${props.styleComponent == 2 || props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} href={"#"}>{texto_tag_link}</a>
       </div>
       
         <div className={`${styleCardP.div_exibir_historico} ${linlExibirH ? styleCardP.linkBlock: ""}`} >
