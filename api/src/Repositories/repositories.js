@@ -11,8 +11,7 @@ class UserReepositoriePlayers {
       const post = await modelPlayers.create(player)
       return post
     } catch (error) {
-      // throw new Error("the name entered already exists, choose another!");
-      throw error
+      throw new Error("the name entered already exists, choose another!");
     }
   }
   async repositoriePut(id, body){

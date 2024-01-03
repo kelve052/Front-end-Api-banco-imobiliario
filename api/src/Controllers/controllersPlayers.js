@@ -12,8 +12,11 @@ const playersGet = async (req, res)=>{
 //-----------------------------------------------------------------------------------------------------
 const playersPost = async (req, res)=>{
  try {
-   const {name, team, password} = req.body
-   const body = {name, team, password}
+   const {name, team, balance ,password} = req.body
+   const body = {name, team, password, balance}
+   if(!Number(balance)){
+    throw new Error('valor SALDO incompativel!')
+   }
    if(!name || !team || !password){
      throw new Error("body incorret, name, team and password required!")
    }

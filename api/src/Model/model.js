@@ -16,7 +16,7 @@ const modelPlayers = new mongoose.Schema({
     type: String,
     enum: ['Yellow', 'Blue', 'White', 'Black', 'Red', 'Green']
   },
-  balancer: {
+  balance: {
     type: Number,
     default: 0
   },
