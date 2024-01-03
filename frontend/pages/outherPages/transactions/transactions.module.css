@@ -3,6 +3,7 @@
   min-height: 800px;
   margin: auto;
   background-color: #382C6E;
+  position: relative;
 }
 .main{
   padding: 0 15px;
@@ -47,4 +48,11 @@
   font-weight: 400;
   line-height: normal;
   text-decoration-line: underline;
+}
+
+/* backgrounds */
+.imgs_backgrounds_1{
+  position: absolute;
+  bottom: 0;
+  left: -8px;
 }

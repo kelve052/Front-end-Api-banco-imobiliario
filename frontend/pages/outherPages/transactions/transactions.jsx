@@ -4,6 +4,7 @@ import SelectPlayer from '@/components/selectPlayer/selectPlayer'
 import InputBar from '@/components/inputBar/inputBar'
 import Historicy from '@/components/historic/historicy'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function transactions () {
   return(
@@ -22,6 +23,9 @@ export default function transactions () {
           <Historicy img1='/images/team/team6.png' img2='/images/team/team4.png' type='Enviou' name1='Marco' name2='Ana' value='1000' />
           <Historicy img1='/images/team/team6.png' img2='/images/team/team1.png' type='Recebeu' name1='Marco' name2='Carlos' value='1000' />
           <Link className={styleTransaction.link_exibir_todo_h} href={''}>Exibir todo o histórico</Link>
+
+          {/* background */}
+          <Image className={styleTransaction.imgs_backgrounds_1} src={"/images/backgrounds/background-5.png"} width={250} height={355}></Image>
         </div>
       </main>
     </section>

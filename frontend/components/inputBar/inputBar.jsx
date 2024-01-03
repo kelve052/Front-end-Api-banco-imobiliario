@@ -24,10 +24,17 @@ export default function InputBar (props) {
     }
     userCor(corTime)
   }
+
+  // pegar valor dos imputs e enviar para component pai
+  const handleInputChange = (event)=>{
+    if(props.onChange){
+      props.onChange(event.target.value)
+    }
+  }
   return(
     <div lassName={styleImput.inputBar}>
       <p className={`${styleImput.p_text} ${props.isBanck? `${styleImput.input_opacity}`: ''}`}>{props.text}</p>
-      <input readOnly={props.isBanck} name={props.name} onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.width, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={`${styleImput.input} ${props.isBanck? `${styleImput.input_opacity}`: ''}`} />
+      <input onChangeCapture={handleInputChange} readOnly={props.isBanck} name={props.name} onBlur={()=>userCor("#fff")} onChange={muarCor} style={{width: props.width, color: cor, borderColor: cor}} placeholder={props.placeholder} type="text" className={`${styleImput.input} ${props.isBanck? `${styleImput.input_opacity}`: ''}`} />
     </div>
   )
 }

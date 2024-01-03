@@ -77,6 +77,15 @@
   border-radius: 250px;
   transform: scale(1.1);
 }
+.message_error{
+  color: #F1C40F;
+  font-family: IBM Plex Sans Devanagari;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
 .botao_adicionar{
   width: 317px;
   height: 36px;
@@ -84,7 +93,6 @@
   border: none;
   background-color:  #4381C1;
   cursor: pointer;
-  margin-top: 28px;
 
   color: #fff;
   font-family: Quicksand;
@@ -118,4 +126,21 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.loader{
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #00A221;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.esconderLoder{
+  display: none;
 }
