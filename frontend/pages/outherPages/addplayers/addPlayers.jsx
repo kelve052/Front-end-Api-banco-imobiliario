@@ -35,7 +35,7 @@ export default function AddPlayers() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = api.deletarTodosPlayers()
+        api.deletarTodosPlayers()
       } catch (error) {
         console.log(error)
       }
@@ -62,12 +62,14 @@ export default function AddPlayers() {
       setExecutarFuncaoListarPlayer(false);
     }
   }, [executarFuncaoListarPlayer])
-  
+
   const elementosPlayers = () => {
     const cardsElementos = listaPlayer.map((player) => 
       (
         <CardPlayerSetings
+          onChange={() => setExecutarFuncaoListarPlayer(true)}
           key={player._id}
+          id={player._id}
           styleComponent={2}
           balance={player.balance}
           name={player.name}

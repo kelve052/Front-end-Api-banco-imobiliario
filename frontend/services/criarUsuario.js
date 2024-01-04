@@ -26,6 +26,15 @@ class Api {
     }
   }
 
+  deletarPlayer = async (id)=>{
+    try {
+      const response = await this.server.delete(`/player/${id}`)
+      return response
+    } catch (error) {
+      throw error
+    }
+  }
+
   deletarTodosPlayers = async ()=>{
     try {
       const response = await this.server.delete('/deleteAllPlayers')

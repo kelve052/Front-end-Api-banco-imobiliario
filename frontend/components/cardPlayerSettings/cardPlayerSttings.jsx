@@ -2,11 +2,16 @@ import styleCardP from "./cardPlayerS.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import Historicy from "../historic/historicy"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Api from "@/services/criarUsuario"
 
 export default function CardPlayerSetings (props) {
 const [texto_tag_link, useTexto] = useState("Exibir todo o histórico")
 const [linlExibirH, UserLinkExibirH] = useState(false)
+const [botaoDeletarPlayer, setBotaoDeletarPlayer] = useState(false)
+const [deleting, setDeleting] = useState(false)
+const api = new Api
+
 const mudarId = ()=>{
   UserLinkExibirH(!linlExibirH)
   if(!linlExibirH){
@@ -16,12 +21,30 @@ const mudarId = ()=>{
   }
 }
 
+useEffect(()=>{
+  const fetchData = async ()=>{
+    try {
+      await api.deletarPlayer(props.id)  
+      props.onChange(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  if(botaoDeletarPlayer){
+    fetchData()
+    setBotaoDeletarPlayer(false)
+  }
+}, [botaoDeletarPlayer])
+
+
 
 //PROPS->
 //[styleComponent] case 1, 2, 3 or 4 alter style of component: (1 / 2 / 3 /4)
 //[balance] add value in balance
 //[name] add name in player
 //[img] add icon profile in player
+//[id] id of player for delete
 
   return(
     <div className={`${styleCardP.cardPlayerSettings} ${props.styleComponent == 2 || props.styleComponent == 3? `${styleCardP.retirar_background}`: ''}`}>
@@ -40,7 +63,7 @@ const mudarId = ()=>{
               <Image alt="icon pencil" className={`${styleCardP.iconPencil} ${props.styleComponent == 2 || props.styleComponent == 3 || props.styleComponent == 4?  `${styleCardP.ocultar_elemento}`: ''}`} src={"/images/icons/pencil.png"} width={24} height={24}/>
             </Link>
 
-            <Image alt="icon trash" className={`${styleCardP.iconTrash} ${props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} src={'/images/icons/trash.png'} width={24} height={24}/>
+            <Image onClick={()=>setBotaoDeletarPlayer(true)} alt="icon trash" className={`${styleCardP.iconTrash} ${props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} src={'/images/icons/trash.png'} width={24} height={24}/>
           </div>
         </div>
         <a onClick={mudarId} className={`${styleCardP.link_exibir_historico} ${props.styleComponent == 2 || props.styleComponent == 3? `${styleCardP.ocultar_elemento}`: ''}`} href={"#"}>{texto_tag_link}</a>
