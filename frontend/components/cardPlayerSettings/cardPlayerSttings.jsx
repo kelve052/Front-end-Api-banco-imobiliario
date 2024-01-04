@@ -4,13 +4,14 @@ import Link from "next/link"
 import Historicy from "../historic/historicy"
 import { useEffect, useState } from "react"
 import Api from "@/services/criarUsuario"
+import ApiBanco from "@/services/banco"
 
 export default function CardPlayerSetings (props) {
 const [texto_tag_link, useTexto] = useState("Exibir todo o histórico")
 const [linlExibirH, UserLinkExibirH] = useState(false)
 const [botaoDeletarPlayer, setBotaoDeletarPlayer] = useState(false)
-const [deleting, setDeleting] = useState(false)
 const api = new Api
+const apiBanco = new ApiBanco
 
 const mudarId = ()=>{
   UserLinkExibirH(!linlExibirH)
@@ -23,12 +24,21 @@ const mudarId = ()=>{
 
 useEffect(()=>{
   const fetchData = async ()=>{
-    try {
-      await api.deletarPlayer(props.id)  
-      props.onChange(true)
-    } catch (error) {
-      console.log(error)
-    }
+    if(props.isBanck){
+      try {
+        await apiBanco.deletarBanco(props.id)
+        props.onChange(true)
+      } catch (error) {
+        console.log('error ao deletar banco:', error)
+      }
+    }else{
+        try {
+          await api.deletarPlayer(props.id)  
+          props.onChange(true)
+        } catch (error) {
+          console.log(error)
+        }
+      }
   }
 
   if(botaoDeletarPlayer){
@@ -45,6 +55,7 @@ useEffect(()=>{
 //[name] add name in player
 //[img] add icon profile in player
 //[id] id of player for delete
+//[isBanck] for user id delete banck
 
   return(
     <div className={`${styleCardP.cardPlayerSettings} ${props.styleComponent == 2 || props.styleComponent == 3? `${styleCardP.retirar_background}`: ''}`}>
