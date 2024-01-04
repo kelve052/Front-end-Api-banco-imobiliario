@@ -10,7 +10,7 @@ const modelBank = new mongoose.Schema({
     type: String,
     default: "$B: Bank-Dlatles"
   },
-  balancer:{
+  balance:{
     type: Number,
     default: 0
   }

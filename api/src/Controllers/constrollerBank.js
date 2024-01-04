@@ -15,12 +15,13 @@ const getBank = async (req, res)=>{
 
 const postBank = async(req, res)=>{
   try {
-    let {name,  balancer} = req.body
-    if(!name || !balancer){
-      throw new Error("Body required: name and balancer")
+    await servicesBank.servicesUniqueBanck() //caso queira ter maias de uma banco no sistema remova essa linha
+    let {name,  balance} = req.body
+    if(!name || !balance){
+      throw new Error("Body required: name and balance")
     }
     name = `$B: ${name}`
-    const body = {name,  balancer}
+    const body = {name,  balance}
     const post = await servicesBank.servicesBankPost(body)
     res.status(200).json({Bank: post})
   } catch (error) {

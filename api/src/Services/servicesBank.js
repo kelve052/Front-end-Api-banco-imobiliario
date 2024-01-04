@@ -10,6 +10,13 @@ class ServicesBank{
       throw error;
     }
   }
+  async servicesUniqueBanck (){
+    try {
+      await repositoryeBank.repositorieUniqueBanck()
+    } catch (error) {
+      throw error;
+    }
+  }
   async servicesBankPost (body){
     try {
       return await repositoryeBank.repositoriePostBank(body)

@@ -9,14 +9,20 @@ class UserRepositoryBank{
       throw error;
     }
   }
+  async repositorieUniqueBanck (){
+    const dataBaseBank = await modelBank.find()
+    if(dataBaseBank.length > 0){
+      throw new Error('Deve existir apenas um banco no sitema!')
+    }
+  }
   async repositoriePostBank (body){
     try {
       const nameBankExist = await modelBank.findOne({name: body.name})
       if(nameBankExist){
         throw new Error(`Name: ${nameBankExist.name} already belongs to another bank!`)
       }
-      if(body.balancer < 0){
-        throw new Error("The balancer cannot be less than 0")
+      if(body.balance < 0){
+        throw new Error("The balance cannot be less than 0")
       }
       return await modelBank.create(body)
     } catch (error) {
@@ -35,8 +41,8 @@ class UserRepositoryBank{
           throw new Error("Name inserted already belong to another bank!")
         }
       }
-      if(body.balancer < 0){
-        throw new Error("the balancer cannot be less than 0!")
+      if(body.balance < 0){
+        throw new Error("the balance cannot be less than 0!")
       }
       if(body.name != bank.name){
         await modelRegister.updateMany({playerWhoSent: bank.name},  {playerWhoSent: body.name})
