@@ -8,6 +8,7 @@ export default function InputBar (props) {
   //[name] add name in tag of input
   //[placeholder] add placeholder in input
   //[width] defined width input
+  //[onChange] envit value for component father
 
   const [cor, userCor] = useState("#ffffff")
   useEffect(()=>{

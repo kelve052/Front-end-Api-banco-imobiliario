@@ -1,3 +1,8 @@
+.div_global{
+  position: relative;
+  height: 150px;
+}
+
 .p_title{
   color: #FFF;
   font-family: Quicksand;
@@ -5,14 +10,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-top: 8px;
 }
 .select{
-  width: 317px;
+  display: flex;
+  align-items: center;
+  width: 308px;
   height: 36px;
   border-radius: 5px;
   border: 1px solid #FFF;
   background-color: transparent;
-  outline: none;
+  position: relative;
   
   /* para alterar a seta */
   appearance: none;
@@ -22,4 +30,84 @@
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 20px; /* Ajuste o padding conforme necessário para evitar que o texto se sobreponha à seta */
+}
+.select:hover{
+  background-color: #fff;
+}
+.p_select{
+  margin: 0;
+  margin-left: 16px;
+  color: #000;
+  font-family: Quicksand;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.select_div_options{
+  position: absolute;
+  top: 36px;
+  width: 328px;
+  display: block;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* css scrow select */
+
+.select_div_options::-webkit-scrollbar {
+  /* barra de rolagem */
+  width: 6px;
+  background-color: #FFF;
+}
+
+.select_div_options::-webkit-scrollbar-thumb {
+  /* barra dentro da barra de rolagem */
+  background-color: #382C6E;
+  border-right: #fff solid 2px;
+  border-radius: 250px;
+}
+/* end css scrow select */
+
+
+
+.option_div{
+  background-color: #FFF;
+  width: 328px;
+  height: 37px;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.img_div_input{
+  padding-left: 8px;
+}
+.p_div_input{
+  color: #000;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.option_div:hover{
+  background-color: #8E44AD;
+}
+.card_received_true{
+  border-top: #F1C40F solid 0.5px;
+  border-bottom: #F1C40F 0.5px solid;
+  background-color: #382C6E;
+  box-shadow: 0px 0px 80px 0px #9784ed inset;
+  display: block;
+  width: 360px;
+  height: 130px;
+
+  position: absolute;
+  left: -15px;
+  top: 0;
+  z-index: -1;
+  padding-bottom: 24px;
 }

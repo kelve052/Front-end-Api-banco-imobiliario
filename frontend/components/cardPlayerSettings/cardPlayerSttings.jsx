@@ -3,8 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import Historicy from "../historic/historicy"
 import { useEffect, useState } from "react"
-import Api from "@/services/criarUsuario"
-import ApiBanco from "@/services/banco"
+import Api from "@/services/playerApi"
+import ApiBanco from "@/services/bancoApi"
 
 export default function CardPlayerSetings (props) {
 const [texto_tag_link, useTexto] = useState("Exibir todo o histórico")

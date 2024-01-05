@@ -90,7 +90,7 @@ font is only used in balance teaxt */
   width: 218px;
 }
 .retirar_background{
-  background-color: #382C6E;
+  background-color: transparent;
 }
 .retirar_background .blockAll{
   padding: 0 15px;

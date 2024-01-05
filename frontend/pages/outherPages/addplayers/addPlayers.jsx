@@ -4,8 +4,8 @@ import InputBar from "@/components/inputBar/inputBar"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import CardPlayerSetings from "@/components/cardPlayerSettings/cardPlayerSttings"
-import Api from "@/services/criarUsuario"
-import ApiBanco from "@/services/banco"
+import Api from "@/services/playerApi"
+import ApiBanco from "@/services/bancoApi"
 
 export default function AddPlayers() {
   const api = new Api
