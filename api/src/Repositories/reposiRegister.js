@@ -21,34 +21,34 @@ class UserReposiRegister{
       const playerWhoReceivedIsBank = await modelBank.findOne({name: body.playerWhoReceived})
 
       if(playerWhoSent && playerWhoReceived){ // check if is players
-        playerWhoSent.balancer = playerWhoSent.balancer - body.balanceValue
-        if(playerWhoSent.balancer < 0 || body.balanceValue < 0){  // validade balance
+        playerWhoSent.balance = playerWhoSent.balance - body.balanceValue
+        if(playerWhoSent.balance < 0 || body.balanceValue < 0){  // validade balance
           throw new Error("Insufficient balance in playerWhosent")
         }
         playerWhoSent.save()
-        playerWhoReceived.balancer = playerWhoReceived.balancer + body.balanceValue
+        playerWhoReceived.balance = Number(playerWhoReceived.balance) + Number(body.balanceValue)
         playerWhoReceived.save()
         const createRegister = await modelRegister.create(body)
         return createRegister
 
       }else if (playerWhoSent && playerWhoReceivedIsBank){ //check if is player and bank
-        playerWhoSent.balancer = playerWhoSent.balancer - body.balanceValue
-        if(playerWhoSent.balancer < 0 || body.balanceValue < 0){  // validade balance
+        playerWhoSent.balance = Number(playerWhoSent.balance) - Number(body.balanceValue)
+        if(playerWhoSent.balance < 0 || body.balanceValue < 0){  // validade balance
           throw new Error("Insufficient balance in playerWhosent")
         }
         playerWhoSent.save()
-        playerWhoReceivedIsBank.balancer = playerWhoReceivedIsBank.balancer + body.balanceValue
+        playerWhoReceivedIsBank.balance = Number(playerWhoReceivedIsBank.balance) + Number(body.balanceValue)
         playerWhoReceivedIsBank.save()
         const createRegister = await modelRegister.create(body)
         return createRegister
 
       }else if(playerWhoReceived && playerWhoSentIsBank){ //check if is reverse player and bank
-        playerWhoSentIsBank.balancer = playerWhoSentIsBank.balancer - body.balanceValue
-        if(playerWhoSentIsBank.balancer < 0 || body.balanceValue < 0){  // validade balance
+        playerWhoSentIsBank.balance = Number(playerWhoSentIsBank.balance) - Number(body.balanceValue)
+        if(playerWhoSentIsBank.balance < 0 || body.balanceValue < 0){  // validade balance
           throw new Error("Insufficient balance in playerWhosent")
         }
         playerWhoSentIsBank.save()
-        playerWhoReceived.balancer = playerWhoReceived.balancer + body.balanceValue
+        playerWhoReceived.balance = Number(playerWhoReceived.balance) + Number(body.balanceValue)
         playerWhoReceived.save()
         const createRegister = await modelRegister.create(body)
         return createRegister
