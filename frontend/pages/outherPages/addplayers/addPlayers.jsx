@@ -5,30 +5,50 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import CardPlayerSetings from "@/components/cardPlayerSettings/cardPlayerSttings"
 import Api from "@/services/criarUsuario"
+import ApiBanco from "@/services/banco"
 
 export default function AddPlayers() {
   const api = new Api
+  const apiBanco = new ApiBanco
   const [listaPlayer, setListaPlayer] = useState([])
   const [botaoAdicionar, setBotaoAdicionar] = useState(false)
   const [btnDeletarTodosPlayers, setBtnDeletarTodosPlayers] = useState(false)
   const [message, setMessage] = useState(null)
   const [executarFuncaoListarPlayer, setExecutarFuncaoListarPlayer] = useState(true)
   const [listaPlayersNull, setListaPlayersNull] = useState(false)
+  const [listaBanco, setListaBanco] = useState([])
 
   const [objetoPlayer, setObjetoPlayer] = useState({ name: '', password: '', balance: '', team: '' })
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await api.CriarPlayer(objetoPlayer)
-        setMessage(response)
-      } catch (error) {
-        setMessage(error)
+    if(!checkboxMark){
+      const fetchData = async () => {
+        try {
+          const response = await api.CriarPlayer(objetoPlayer)
+          setMessage(response)
+        } catch (error) {
+          setMessage(error)
+        }
       }
-    }
-    if (botaoAdicionar) {
-      fetchData();
-      setExecutarFuncaoListarPlayer(true);
-      setBotaoAdicionar(false);
+      if (botaoAdicionar) {
+        fetchData();
+        setExecutarFuncaoListarPlayer(true);
+        setBotaoAdicionar(false);
+      }
+    }else{
+      const fetchData = async ()=>{
+        try {
+          const response = await apiBanco.criarBanco(objetoPlayer.name, objetoPlayer.balance)
+          setMessage(response)
+          setExecutarFuncaoListarPlayer(true)
+        } catch (error) {
+          console.log(error)
+          setMessage(error)
+        }
+      }
+      if(botaoAdicionar){
+        fetchData()
+        setBotaoAdicionar(false)
+      }
     }
   }, [botaoAdicionar])
 
@@ -51,14 +71,23 @@ export default function AddPlayers() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.listarPlayers()
+        const response = await api.listarPlayers()        
         setListaPlayer(response.Players)
       } catch (error) {
         console.error('Erro ao listar players:', error);
       }
     }
-    if (executarFuncaoListarPlayer) {
+    const fetchDataBanck = async ()=>{
+      try {
+        const response = await apiBanco.listarBancos()        
+        setListaBanco(response.Bank)
+      } catch (error) {
+        console.error('Erro ao listar bancos:', error)
+      }
+    }
+    if (executarFuncaoListarPlayer) {      
       fetchData();
+      fetchDataBanck()
       setExecutarFuncaoListarPlayer(false);
     }
   }, [executarFuncaoListarPlayer])
@@ -78,6 +107,23 @@ export default function AddPlayers() {
     );  
     return cardsElementos
   }
+
+  const elementosBank = () =>{
+    const cardElementos = listaBanco.map(bank =>(
+      <CardPlayerSetings
+          onChange={() => setExecutarFuncaoListarPlayer(true)}
+          key={bank._id}
+          id={bank._id}
+          isBanck={true}
+          styleComponent={2}
+          balance={bank.balance}
+          name={bank.name}
+          img={`/images/team/teamBanco.png`}
+        />
+    ))
+    return cardElementos
+  }
+
   useEffect(() => {
     if (listaPlayer.length === 0) {
       setListaPlayersNull(true);
@@ -140,7 +186,10 @@ export default function AddPlayers() {
             {elementosPlayers().length == 0 ?
               (<div class={`${styleAddP.loader} ${listaPlayersNull? `${styleAddP.esconderLoder}`: ''}`}></div>)
               :
-              elementosPlayers()}
+              (<>
+                {elementosBank()}
+                {elementosPlayers()}
+              </>)}
           </div>
           <button onClick={() => setBtnDeletarTodosPlayers(true)} className={styleAddP.botao_resetar}>Resetar</button>
         </div>
