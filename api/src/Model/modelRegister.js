@@ -9,8 +9,16 @@ const modelRegister = new mongoose.Schema({
   playerWhoSent: {
     type: String,
   },
+  teamPlayerWhoSent: {
+    type: String,
+    enum: ['Blue', 'Yellow', 'Black', 'White', 'Red', 'Green', 'Banco']
+  },
   playerWhoReceived: {
     type: String
+  },
+  teamPlayerWhoReceived: {
+    type: String,
+    enum: ['Blue', 'Yellow', 'Black', 'White', 'Red', 'Green', 'Banco']
   },
   balanceValue: {
     type: Number
