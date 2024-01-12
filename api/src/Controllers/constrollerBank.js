@@ -32,12 +32,12 @@ const postBank = async(req, res)=>{
 const putBank = async (req, res)=>{
   try {
     const id = req.params.id
-    let {name, balancer} = req.body
-    if(!name || !balancer){
-      throw new Error("Body required: name and balancer")
+    let {name, balance} = req.body
+    if(!name || !balance){
+      throw new Error("Body required: name and balance")
     }
     name = `$B: ${name}`
-    const body = {name,  balancer}
+    const body = {name,  balance}
     const newBank = await servicesBank.servicesBankPut(id, body)
     res.status(200).json({Bank: newBank})
   } catch (error) {

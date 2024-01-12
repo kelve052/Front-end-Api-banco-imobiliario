@@ -43,14 +43,17 @@ const playersPost = async (req, res)=>{
 const playerUpdate = async (req, res)=>{
   try {
     const id = req.params.id
-    const {name, team, balancer, password} = req.body
-    const body = {name, team, balancer, password}
-    if(!name || !team || !balancer || !password){
-      throw new Error("imcomplete body, required name, team, balancer and password")
+    const {name, team, balance, password} = req.body
+    const body = {name, team, balance, password}
+    if(!name || !team || !balance || !password){
+      throw new Error("imcomplete body, required name, team, balance and password")
     }
     if(name.startsWith("$B")){
       throw new Error("Name cannot startWhith $B")
     }
+    if(!Number(balance)){
+      throw new Error('valor SALDO incompativel!')
+     }
     if(password.length < 8){
       throw new Error("The password required minimum 8 caracters!")
     }
