@@ -59,6 +59,7 @@
 .select_div_options::-webkit-scrollbar {
   /* barra de rolagem */
   width: 6px;
+  border-radius: 0 0 50px 50px;
   background-color: #FFF;
 }
 
@@ -81,7 +82,9 @@
   align-items: center;
   padding: 4px 0;
 }
-
+.option_div_banco{
+  background-color: #4381C1;
+}
 .img_div_input{
   padding-left: 8px;
 }
@@ -94,11 +97,11 @@
   line-height: normal;
 }
 .option_div:hover{
-  background-color: #8E44AD;
+  background-color: #e9bafd;
+  cursor: pointer;
 }
 .card_received_true{
-  border-top: #F1C40F solid 0.5px;
-  border-bottom: #F1C40F 0.5px solid;
+  
   background-color: #382C6E;
   box-shadow: 0px 0px 80px 0px #9784ed inset;
   display: block;

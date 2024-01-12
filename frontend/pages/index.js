@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CardPlayerSetings from '@/components/cardPlayerSettings/cardPlayerSttings'
 import Historicy from '@/components/historic/historicy'
 import InputBar from '@/components/inputBar/inputBar'
+import NavbarOpitions from '@/components/navbarOpitions/navbarOpitions'
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
      <Image className={styles.imgs_backgrounds_3} src={"/images/backgrounds/background-3.png"} width={90} height={67}></Image>
      <Image className={styles.imgs_backgrounds_4} src={"/images/backgrounds/background-4.png"} width={80} 
      height={55} ></Image>
-     
+     <NavbarOpitions color={1} />
     </section>
   )
 }

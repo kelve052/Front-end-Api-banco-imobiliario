@@ -64,20 +64,41 @@ font is only used in balance teaxt */
   font-weight: 400;
   line-height: 0;
   text-decoration-line: underline;
+  cursor: pointer;
 }
-.div_exibir_historico{
+.div_exibir_historico {
   width: auto;
   padding: 0;
   max-height: 0;
   transition: 0.5s ease-in-out;
   overflow: hidden;
 }
-.linkBlock{
-  max-height: 800px;
+
+.linkBlock {
+  display: block;
   padding: 6px 30px;
-  transition: max-height 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   width: 300px;
+  max-height: 500px; /* Um valor grande o suficiente para acomodar o conteúdo */
+  overflow-y: scroll;
 }
+
+/* css scrow select */
+
+.linkBlock::-webkit-scrollbar {
+  /* barra de rolagem */
+  width: 6px;
+  border-radius: 0 0 50px 50px;
+  background-color: rgba(217, 217, 217, 0.2);  
+}
+
+.linkBlock::-webkit-scrollbar-thumb {
+  /* barra dentro da barra de rolagem */
+  background-color: #382C6E;
+  border-right: #fff solid 2px;
+  border-radius: 250px;
+}
+/* end css scrow select */
 
 /* css case props.pageAddPlayer == 2 or 3 */
 .ocultar_elemento{
@@ -108,4 +129,21 @@ font is only used in balance teaxt */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  }
+
+  .loader{
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #00A221;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .esconderLoder{
+    display: none;
   }

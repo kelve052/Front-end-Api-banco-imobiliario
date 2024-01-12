@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import CardPlayerSetings from "@/components/cardPlayerSettings/cardPlayerSttings"
 import Api from "@/services/playerApi"
 import ApiBanco from "@/services/bancoApi"
+import NavbarOpitions from "@/components/navbarOpitions/navbarOpitions"
 
 export default function AddPlayers() {
   const api = new Api
@@ -114,7 +115,7 @@ export default function AddPlayers() {
           onChange={() => setExecutarFuncaoListarPlayer(true)}
           key={bank._id}
           id={bank._id}
-          isBanck={true}
+          isBank={true}
           styleComponent={2}
           balance={bank.balance}
           name={bank.name}
@@ -169,12 +170,12 @@ export default function AddPlayers() {
           :
           (
             <div className={styleAddP.div_icons_equipe}>
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Blue' })), actionSelecionar(1) }} id={1} className={`${styleAddP.imgs_team} ${teamSelecionado === 1 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team1.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Green' })), actionSelecionar(2) }} id={2} className={`${styleAddP.imgs_team} ${teamSelecionado === 2 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team2.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Red' })), actionSelecionar(3) }} id={3} className={`${styleAddP.imgs_team} ${teamSelecionado === 3 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team3.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Yellow' })), actionSelecionar(4) }} id={4} className={`${styleAddP.imgs_team} ${teamSelecionado === 4 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team4.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'White' })), actionSelecionar(5) }} id={5} className={`${styleAddP.imgs_team} ${teamSelecionado === 5 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team5.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Black' })), actionSelecionar(6) }} id={6} className={`${styleAddP.imgs_team} ${teamSelecionado === 6 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/team6.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Blue' })), actionSelecionar(1) }} id={1} className={`${styleAddP.imgs_team} ${teamSelecionado === 1 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamBlue.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Green' })), actionSelecionar(2) }} id={2} className={`${styleAddP.imgs_team} ${teamSelecionado === 2 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamGreen.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Red' })), actionSelecionar(3) }} id={3} className={`${styleAddP.imgs_team} ${teamSelecionado === 3 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamRed.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Yellow' })), actionSelecionar(4) }} id={4} className={`${styleAddP.imgs_team} ${teamSelecionado === 4 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamYellow.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'White' })), actionSelecionar(5) }} id={5} className={`${styleAddP.imgs_team} ${teamSelecionado === 5 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamWhite.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Black' })), actionSelecionar(6) }} id={6} className={`${styleAddP.imgs_team} ${teamSelecionado === 6 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamBlack.png'} />
             </div>
           )
         }
@@ -194,6 +195,7 @@ export default function AddPlayers() {
           <button onClick={() => setBtnDeletarTodosPlayers(true)} className={styleAddP.botao_resetar}>Resetar</button>
         </div>
       </main>
+      <NavbarOpitions color={2}/>
     </section>
   );
 }

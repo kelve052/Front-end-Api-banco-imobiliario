@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import styleHeader from "./header.module.css"
+import { useRouter } from "next/router"
 
 export default function Header (props){
   //PROPS->
@@ -10,9 +11,6 @@ export default function Header (props){
   let link = "/outherPages/settings/settings"
   if(props.iconAction == 2){// altera icone de configuração para play
     srcImage = "/images/icons/play.png"
-    link = "/outherPages/transactions/transactions"
-  }else if(props.iconAction == 3){// altera icone de configuração para voltar
-    srcImage = "/images/icons/arow_return.png"
     link = "/outherPages/transactions/transactions"
   }
   return(

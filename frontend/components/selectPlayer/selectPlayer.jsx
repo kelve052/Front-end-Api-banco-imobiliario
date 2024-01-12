@@ -3,6 +3,7 @@ import CardPlayerSetings from '../cardPlayerSettings/cardPlayerSttings'
 import styleInputS from './selectPlayer.module.css'
 import Api from '@/services/playerApi'
 import Image from 'next/image'
+import ApiBanco from '@/services/bancoApi'
 
 export default function SelectPlayer(props) {
   //PROPS->
@@ -17,11 +18,15 @@ export default function SelectPlayer(props) {
   const [cardPlayerSelecionado, setCardPlayerSelecionado]  = useState()
   const [textSelect, setTetxSelect] = useState('Escolha o participante que ira enviar:')
   const api = new Api
+  const apiBanco = new ApiBanco
   const [listaPlayers, setListaPlayers] = useState([])
+  const [listarBancos, setListarBancos] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await api.listarPlayers()
+      const responseListarBancos = await apiBanco.listarBancos()
+      setListarBancos(responseListarBancos.Bank)
       setListaPlayers(response.Players)
       console.log(response)
     }
@@ -40,7 +45,7 @@ export default function SelectPlayer(props) {
 
   const functionPlayerEscolhido = (name, balance, team)=>{
     if(props.player){ //enviar player para component pai
-      props.player(name)
+      props.player({name, team})
     }
     setCardPlayerSelecionado(
       <CardPlayerSetings styleComponent={3} balance={balance} name={name} img={`/images/team/team${team}.png`} />
@@ -60,12 +65,19 @@ export default function SelectPlayer(props) {
     ))
     return card
   }
-
-  useEffect(()=>{
-    if(props.listarPlayersCompFilho){
-      setCardPlayerSelecionado('')
-    }
-  }, [props.listarPlayersCompFilho])
+  const elementosOpitionsBank = ()=>{
+    const card = listarBancos.map((banco, index) =>(
+      <div key={index} onClick={()=>{
+        setOpitionSelect(true)
+        setTetxSelect(`${banco.name}`)
+        functionPlayerEscolhido(banco.name, banco.balance, 'Banco')
+        }} className={`${styleInputS.option_div} ${styleInputS.option_div_banco}`}>
+        <Image className={styleInputS.img_div_input} src={`/images/team/teamBanco.png`} alt='icon_profile' width={25} height={25} />
+        <p className={styleInputS.p_div_input}>{banco.name}</p>
+      </div>
+    ))
+    return card
+  }
 
   return (
     <div className={styleInputS.div_global}>
@@ -74,10 +86,11 @@ export default function SelectPlayer(props) {
         <p className={styleInputS.p_select}>{textSelect}</p>
         <div style={{maxHeight: maxHeightStyle}} className={styleInputS.select_div_options}>
           {elementosOpitions()}
+          {elementosOpitionsBank()}
         </div>
       </div>
       {cardPlayerSelecionado}
-      <span className={`${props.received ? `${styleInputS.card_received_true}` : ''}`}></span>
+      <span className={`${props.received ? `${styleInputS.card_received_true}` : `${styleInputS.card_received_true}`}`}></span>
     </div>
   )
 }

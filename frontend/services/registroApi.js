@@ -1,29 +1,41 @@
 import axios from "axios";
 
 class RegistroApi {
-  constructor(){
+  constructor() {
     this.server = axios.create({
-      baseURL: 'http://localhost:4000'
-    })
+      baseURL: "http://localhost:4000",
+    });
   }
 
-  async listarRegistros(){
+  async listarRegistros() {
     try {
-      const response = await this.server.get('/register')
-      return response.data
+      const response = await this.server.get("/register");
+      return response.data;
     } catch (error) {
-      throw error
+      throw error;
     }
   }
 
-  async criarRegistro (playerWhoSent, playerWhoReceived, balanceValue) {
+  async criarRegistro(
+    playerWhoSent,
+    playerWhoReceived,
+    balanceValue,
+    teamPlayerWhoSent,
+    teamPlayerWhoReceived
+  ) {
     try {
-      const response = await this.server.post('/register', {playerWhoSent, playerWhoReceived, balanceValue})
-      return response.data
+      const response = await this.server.post("/register", {
+        playerWhoSent,
+        teamPlayerWhoSent,
+        playerWhoReceived,
+        teamPlayerWhoReceived,
+        balanceValue,
+      });
+      return response.data;
     } catch (error) {
-      throw error.response.data.Error
+      throw error.response.data.Error;
     }
   }
 }
 
-export default RegistroApi
+export default RegistroApi;

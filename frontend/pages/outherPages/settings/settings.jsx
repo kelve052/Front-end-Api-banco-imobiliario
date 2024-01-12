@@ -1,26 +1,69 @@
 import Header from '@/components/Header/header'
 import styleSettings from './settings.module.css'
 import CardPlayerSetings from '@/components/cardPlayerSettings/cardPlayerSttings'
+import { useEffect, useState } from 'react'
+import Api from '@/services/playerApi'
+import ApiBanco from '@/services/bancoApi'
+import NavbarOpitions from '@/components/navbarOpitions/navbarOpitions'
 
 export default function Settings(){
+
+  const [listaBanco, setListaBancos] = useState([])
+  const [listaPlayers, setListaPlayers] = useState([])
+  const [functionListar, setFunctionListar] = useState(true)
+  const apiPlayers = new Api
+  const apiBanco = new ApiBanco
+
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try {
+        const response = await apiPlayers.listarPlayers()
+        setListaPlayers(response.Players)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    const fetchDataBanco = async () =>{
+      try {
+        const response = await apiBanco.listarBancos()
+        setListaBancos(response.Bank)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    if(functionListar){
+      fetchData()
+      fetchDataBanco()
+      setFunctionListar(false)
+    }
+  }, [functionListar])
+
+  const criarElementPlayers = ()=>{
+    return listaPlayers.map(player => (
+      <CardPlayerSetings onChange={(value)=> setFunctionListar(value)} id={player._id} balance={player.balance} name={player.name} img={`/images/team/team${player.team}.png`}/>
+    ))   
+  }
+  const criarElementBanks = ()=>{
+    return listaBanco.map(banco => (
+      <CardPlayerSetings onChange={(value)=> setFunctionListar(value)} isBank={true} id={banco._id} balance={banco.balance} name={banco.name} img={`/images/team/teamBanco.png`}/>
+    ))   
+  }
+
+
   return(
     <section className={styleSettings.section_global}>
       <Header iconAction={3}/>
       <main className={styleSettings.main}>
         <div className={styleSettings.div_bancos}>
           <h1 className={styleSettings.h1_jogadores}>Bancos:</h1>
-          <CardPlayerSetings styleComponent='' balance='100.000,00' name='B$Blackstone' img='/images/team/teamBanco.png'/>
+          {criarElementBanks()}
         </div>
         <div className={styleSettings.div_jogadores}>
           <h1 className={styleSettings.h1_jogadores}>Joagadores:</h1>
-          <CardPlayerSetings id='banco1' styleComponent='' balance='100.000,00' name='Ana' img='/images/team/team4.png'/>
-          <CardPlayerSetings id='1' styleComponent='' balance='100.000,00' name='Maria' img='/images/team/team6.png'/>
-          <CardPlayerSetings id='1' styleComponent='' balance='100.000,00' name='José' img='/images/team/team1.png'/>
-          <CardPlayerSetings id='1' styleComponent='' balance='100.000,00' name='arrasador' img='/images/team/team3.png'/>
-          <CardPlayerSetings id='1' styleComponent='' balance='100.000,00' name='Ronaldinho do peneu' img='/images/team/team2.png'/>
-          <CardPlayerSetings id='25' styleComponent='' balance='100.000,00' name='Messí' img='/images/team/team5.png'/>
+          {criarElementPlayers()}
         </div>
       </main>
+      <NavbarOpitions color={4}/>
     </section>
   )
 }

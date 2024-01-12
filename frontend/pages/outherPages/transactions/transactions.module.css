@@ -68,6 +68,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 .botao_transferir:hover{
   transform: scale(1.1);
@@ -105,4 +106,15 @@
   position: absolute;
   bottom: 0;
   left: -8px;
+  z-index: -1;
+}
+.a_exibir_todo_historico{
+  color: var(--Cor-texto, #FFF);
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  cursor: pointer;
 }

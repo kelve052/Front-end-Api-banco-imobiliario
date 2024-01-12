@@ -1,0 +1,22 @@
+.section_global{
+  height: 70px;
+  background-color: #251D48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 48px;
+  position: fixed;
+  bottom: 0;
+  width: 360px;
+}
+
+.icons:hover{
+  margin-bottom: 10px;
+  transition: 0.2s;
+  transform: scale(1.4  );
+  cursor: pointer;
+}
+
+.brilho{
+  filter: drop-shadow(0px 0px 15px #F1C40F);
+}

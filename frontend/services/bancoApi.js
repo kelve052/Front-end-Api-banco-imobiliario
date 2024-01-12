@@ -8,7 +8,7 @@ class ApiBanco{
   }
   listarBancos = async ()=>{
     try {
-      const response = await this.server.get('banks')
+      const response = await this.server.get('/banks')
       return response.data
     } catch (error) {
       throw error
@@ -24,6 +24,14 @@ class ApiBanco{
     }
   }
 
+  editarBanco = async (id, name, balance)=>{
+    try {
+      const response = await this.server.put(`/bank/${id}`, {name, balance})
+      return response.data
+    } catch (error) {
+      throw error.response.data.Error
+    }
+  }
   deletarBanco = async (id)=>{
     try {
       const response = await this.server.delete(`/bank/${id}`)

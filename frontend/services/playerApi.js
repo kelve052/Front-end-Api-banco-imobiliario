@@ -26,6 +26,14 @@ class Api {
     }
   }
 
+  editarPlayer = async (id, name, password, balance, team)=>{
+    try {
+      const response = await this.server.put(`/player/${id}`, {name, team, balance, password})
+      return response.data
+    } catch (error) {
+      throw error.response.data.Error
+    }
+  }
   deletarPlayer = async (id)=>{
     try {
       const response = await this.server.delete(`/player/${id}`)
