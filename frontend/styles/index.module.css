@@ -1,10 +1,13 @@
-
-
 .index{
   width: 360px;
-  height: 800px;
+  min-height: 800px;
   margin: auto;
   background-color: #382C6E;
+  background-image: url('/images/backgrounds/fundoHome.png');
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   z-index: 1;
 }
@@ -17,63 +20,18 @@
   font-weight: 700;
   line-height: normal;
 }
-.p_defina_os{
-  margin-top: 230px;
-  color: #F1C40F;
-  font-family: Quicksand;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
-}
-.button_adicionar{
-  width: 317px;
-  height: 36px;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-
-  border-radius: 5px;
-  border: 1px solid var(--Boto-azul, #4381C1);
-  background: var(--Boto-azul, #4381C1);
-
-  /* text_in_buton */
-  color: var(--Cor-texto, #FFF);
-  font-family: IBM Plex Sans Devanagari;
-  font-size: 12px;
+.p_jogadores{
+  font-family: IBM Plex Sans Condensed;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-align: center;
+
+  color: transparent;
+  background-image: linear-gradient(180deg, #02041C 0%, #63A996 100%);
+  background-clip: text;
 }
-.Link_button{
-  text-decoration: none;
-}
-.button_adicionar:hover{
-  transform: scale(1.05);
-  box-shadow: #ad60ff 0px 0px 100px;
-  transition: 0.2s;
-}
-/* css imgs_backgrounds */
-.imgs_backgrounds_1{
-  position: absolute;
-  top: 100px;
-  right: -10px;
-}
-.imgs_backgrounds_2{
-  position: absolute;
-  top: 221px;
-  left: -10px;
-}
-.imgs_backgrounds_3{
-  position: absolute;
-  top: 380px;
-  z-index: -1;
-  right: 0;
-}
-.imgs_backgrounds_4{
-  position: absolute;
-  top: 390px;
-  z-index: -1;
-  left: 0 ;
+.div_bloco_cards{
+  padding-bottom: 70px;
 }

@@ -12,7 +12,7 @@ class Api {
       const response = await this.server.get('/players');
       return response.data;
     } catch (error) {
-      console.error('Erro ao criar usuário:', error);
+      console.error('Erro ao listar usuário:', error);
       throw error;
     }
   };
