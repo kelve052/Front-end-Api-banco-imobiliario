@@ -24,12 +24,12 @@ const postRegister = async (req, res) => {
 
     if (!playerWhoSent || !playerWhoReceived || !balanceValue) {
       throw new Error(
-        "Body required: playerWhoSent , playerWhoReceived and balancerValue!"
+        "Campos obrigatórios vasios, escolha o jogador a enviar e a receber e o valor!"
       );
     }
     if (!teamPlayerWhoSent || !teamPlayerWhoReceived) {
       throw new Error(
-        "Body required: teamPlayerWhoSent , teamPlayerWhoReceived!"
+        "Campos obrigatórios vasios, equipe dos jogadores"
       );
     }
     if(balanceValue == 0){
@@ -38,7 +38,7 @@ const postRegister = async (req, res) => {
       );
     }
     if (playerWhoSent == playerWhoReceived) {
-      throw new Error("playerWhoSent cannot to be to playerWhoReceived");
+      throw new Error("Jogador a enviar não pode ser igual a jogador a receber!");
     }
     
     const body = {
@@ -51,7 +51,7 @@ const postRegister = async (req, res) => {
     const newRegister = await servicesRegister.ServicesPostRegister(body);
     res
       .status(200)
-      .json({ Msg: "Operation Sucefull", RegsitePlayers: newRegister });
+      .json({ Msg: "Operação bem sucedida", RegsitePlayers: newRegister });
   } catch (error) {
     res.status(400).json({ Error: error.message });
   }

@@ -17,9 +17,16 @@ const postBank = async(req, res)=>{
   try {
     await servicesBank.servicesUniqueBanck() //caso queira ter maias de uma banco no sistema remova essa linha
     let {name,  balance} = req.body
-    if(!name || !balance){
-      throw new Error("Body required: name and balance")
+    if(!name || !balance && balance != 0){
+      throw new Error("Campos obrigatórios vasios, nome e saldo!")
     }
+    if(!Number(balance)){
+      if(balance == null || balance == 0){
+        balance = 0
+       }else{
+        throw new Error('valor saldo incompativel!')
+       }
+     }
     name = `$B: ${name}`
     const body = {name,  balance}
     const post = await servicesBank.servicesBankPost(body)
@@ -34,8 +41,15 @@ const putBank = async (req, res)=>{
     const id = req.params.id
     let {name, balance} = req.body
     if(!name || !balance){
-      throw new Error("Body required: name and balance")
+      throw new Error("Campos obrigatórios vasios, nome e saldo!")
     }
+    if(!Number(balance)){
+      if(balance == null || balance == 0){
+        balance = 0
+       }else{
+        throw new Error('valor saldo incompativel!')
+       }
+     }
     name = `$B: ${name}`
     const body = {name,  balance}
     const newBank = await servicesBank.servicesBankPut(id, body)

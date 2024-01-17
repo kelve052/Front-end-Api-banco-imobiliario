@@ -19,10 +19,10 @@ class UserRepositoryBank{
     try {
       const nameBankExist = await modelBank.findOne({name: body.name})
       if(nameBankExist){
-        throw new Error(`Name: ${nameBankExist.name} already belongs to another bank!`)
+        throw new Error(`O Nome: ${nameBankExist.name} já pertence a outro banco!`)
       }
       if(body.balance < 0){
-        throw new Error("The balance cannot be less than 0")
+        throw new Error("O saldo minimo é 0!")
       }
       return await modelBank.create(body)
     } catch (error) {
@@ -33,16 +33,16 @@ class UserRepositoryBank{
     try {
       const bank = await modelBank.findById(id)
       if(!bank){
-        throw new Error("id inserted cannot exits!")
+        throw new Error("ID inserido não exite!")
       }
       const nameBankExits = await modelBank.findOne({name: body.name})
       if(nameBankExits){
         if(bank.name != body.name){
-          throw new Error("Name inserted already belong to another bank!")
+          throw new Error("O nome inserido pertence a outro banco!")
         }
       }
       if(body.balance < 0){
-        throw new Error("the balance cannot be less than 0!")
+        throw new Error("O saldo não pode ser inferiopr a 0!")
       }
       if(body.name != bank.name){
         await modelRegister.updateMany({playerWhoSent: bank.name},  {playerWhoSent: body.name})
@@ -59,7 +59,7 @@ class UserRepositoryBank{
     try {
       const bank = await modelBank.findById(id)
       if(!bank){
-        throw new Error("id inserted cannot exits!")
+        throw new Error("ID inserido não exite!")
       }
       await modelBank.findByIdAndDelete(id)
     } catch (error) {

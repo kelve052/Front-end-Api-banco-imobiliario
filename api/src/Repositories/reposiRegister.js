@@ -23,7 +23,7 @@ class UserReposiRegister{
       if(playerWhoSent && playerWhoReceived){ // check if is players
         playerWhoSent.balance = playerWhoSent.balance - body.balanceValue
         if(playerWhoSent.balance < 0 || body.balanceValue < 0){  // validade balance
-          throw new Error("Insufficient balance in playerWhosent")
+          throw new Error("Saldo insuficiente!")
         }
         playerWhoSent.save()
         playerWhoReceived.balance = Number(playerWhoReceived.balance) + Number(body.balanceValue)
@@ -34,7 +34,7 @@ class UserReposiRegister{
       }else if (playerWhoSent && playerWhoReceivedIsBank){ //check if is player and bank
         playerWhoSent.balance = Number(playerWhoSent.balance) - Number(body.balanceValue)
         if(playerWhoSent.balance < 0 || body.balanceValue < 0){  // validade balance
-          throw new Error("Insufficient balance in playerWhosent")
+          throw new Error("Saldo insuficiente!")
         }
         playerWhoSent.save()
         playerWhoReceivedIsBank.balance = Number(playerWhoReceivedIsBank.balance) + Number(body.balanceValue)
@@ -45,7 +45,7 @@ class UserReposiRegister{
       }else if(playerWhoReceived && playerWhoSentIsBank){ //check if is reverse player and bank
         playerWhoSentIsBank.balance = Number(playerWhoSentIsBank.balance) - Number(body.balanceValue)
         if(playerWhoSentIsBank.balance < 0 || body.balanceValue < 0){  // validade balance
-          throw new Error("Insufficient balance in playerWhosent")
+          throw new Error("Saldo insuficiente!")
         }
         playerWhoSentIsBank.save()
         playerWhoReceived.balance = Number(playerWhoReceived.balance) + Number(body.balanceValue)
@@ -53,7 +53,7 @@ class UserReposiRegister{
         const createRegister = await modelRegister.create(body)
         return createRegister
       }else{
-        throw new Error("playerWhoSent or playerWhoReceived cannot exits and are not banks")
+        throw new Error("Player enviar e player receber não exite e não é um banco!")
       }
     } catch (error) {
       throw error;
