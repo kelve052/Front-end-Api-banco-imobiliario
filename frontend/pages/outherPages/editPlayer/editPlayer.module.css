@@ -113,6 +113,9 @@
   transform: scale(1.05);
   transition: 0.2s;
 }
+.escurecerImg{
+  opacity: 30%;
+}
 .loader{
   border: 8px solid #f3f3f3;
   border-top: 8px solid #00A221;

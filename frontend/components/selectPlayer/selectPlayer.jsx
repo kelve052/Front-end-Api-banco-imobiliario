@@ -15,8 +15,10 @@ export default function SelectPlayer(props) {
   const [clickSelect, setClickSelect] = useState(false)
   const [maxHeightStyle, setMaxHeightStyle] = useState(0)
   const [opitionSelect, setOpitionSelect] = useState(false)
-  const [cardPlayerSelecionado, setCardPlayerSelecionado]  = useState()
-  const [textSelect, setTetxSelect] = useState('Escolha o participante que ira enviar:')
+  const [cardPlayerSelecionado, setCardPlayerSelecionado]  = useState(
+    <CardPlayerSetings styleComponent={3} balance={'-----'} name={'-----'} img={`/images/team/teamInterrogation.png`} />
+  )
+  const [textSelect, setTetxSelect] = useState('Escolha o participante para operação:')
   const api = new Api
   const apiBanco = new ApiBanco
   const [listaPlayers, setListaPlayers] = useState([])

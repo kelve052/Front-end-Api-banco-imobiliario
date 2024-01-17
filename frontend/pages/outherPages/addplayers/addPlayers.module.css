@@ -8,13 +8,17 @@
 }
 .h1_adiciona_part{
   color: #FFF;
-  font-family: Quicksand;
-  font-size: 18px;
+  font-family: IBM Plex Sans Devanagari;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: center;
   margin-top: 32px;
+
+  color: transparent;
+  background-image: linear-gradient(180deg, #ffffff 0%, #63A996 100%);
+  background-clip: text;
 }
 .section_inputs{
   padding: 16px;
@@ -73,11 +77,16 @@
   justify-content: space-between;
   height: 60px;
 }
+.imgs_team{
+  cursor: pointer;
+}
 .time_selecionado{
-  border: 5px solid #00A221;
   transition: 0.2s;
   border-radius: 250px;
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+.escurecerImg{
+  opacity: 30%;
 }
 .message_error{
   color: #F1C40F;
@@ -89,6 +98,7 @@
   text-align: center;
 }
 .botao_adicionar{
+  cursor: pointer;
   width: 317px;
   height: 36px;
   border-radius: 5px;
@@ -119,8 +129,11 @@
   border-radius: 5px;
   border: none;
   background-color: #D64254;
+  display: block;
   cursor: pointer;
+  margin: auto;
   margin-top: 28px;
+  margin-bottom: 52px;
 
   color: #fff;
   font-family: Quicksand;

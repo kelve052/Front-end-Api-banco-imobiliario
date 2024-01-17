@@ -55,11 +55,11 @@ export default function Settings(){
       <Header />
       <main className={styleSettings.main}>
         <div className={styleSettings.div_bancos}>
-          <h1 className={styleSettings.h1_jogadores}>Bancos:</h1>
+          <h1 className={styleSettings.h1_jogadores}>Bancos: {listaBanco.length}</h1>
           {criarElementBanks()}
         </div>
         <div className={styleSettings.div_jogadores}>
-          <h1 className={styleSettings.h1_jogadores}>Joagadores:</h1>
+          <h1 className={styleSettings.h1_jogadores}>Joagadores: {listaPlayers.length}</h1>
           {criarElementPlayers()}
         </div>
       </main>

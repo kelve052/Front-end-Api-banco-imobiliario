@@ -133,9 +133,11 @@ export default function AddPlayers() {
 
   const [teamSelecionado, setTeamSelecionado] = useState(null);
   const [checkboxMark, setCheckboxMark] = useState(false);
+  const [classEscurecer, setClassEscurecer] = useState('')
 
   const actionSelecionar = (id) => {
     setTeamSelecionado((prevState) => (prevState === id ? null : id));
+    setClassEscurecer(styleAddP.escurecerImg)
   };
 
   const checkedTrue = () => {
@@ -170,12 +172,12 @@ export default function AddPlayers() {
           :
           (
             <div className={styleAddP.div_icons_equipe}>
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Blue' })), actionSelecionar(1) }} id={1} className={`${styleAddP.imgs_team} ${teamSelecionado === 1 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamBlue.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Green' })), actionSelecionar(2) }} id={2} className={`${styleAddP.imgs_team} ${teamSelecionado === 2 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamGreen.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Red' })), actionSelecionar(3) }} id={3} className={`${styleAddP.imgs_team} ${teamSelecionado === 3 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamRed.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Yellow' })), actionSelecionar(4) }} id={4} className={`${styleAddP.imgs_team} ${teamSelecionado === 4 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamYellow.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'White' })), actionSelecionar(5) }} id={5} className={`${styleAddP.imgs_team} ${teamSelecionado === 5 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamWhite.png'} />
-              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Black' })), actionSelecionar(6) }} id={6} className={`${styleAddP.imgs_team} ${teamSelecionado === 6 ? styleAddP.time_selecionado : ""}`} width={48} height={48} src={'/images/team/teamBlack.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Blue' })), actionSelecionar(1) }} id={1} className={`${styleAddP.imgs_team} ${teamSelecionado === 1 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamBlue.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Green' })), actionSelecionar(2) }} id={2} className={`${styleAddP.imgs_team} ${teamSelecionado === 2 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamGreen.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Red' })), actionSelecionar(3) }} id={3} className={`${styleAddP.imgs_team} ${teamSelecionado === 3 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamRed.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Yellow' })), actionSelecionar(4) }} id={4} className={`${styleAddP.imgs_team} ${teamSelecionado === 4 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamYellow.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'White' })), actionSelecionar(5) }} id={5} className={`${styleAddP.imgs_team} ${teamSelecionado === 5 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamWhite.png'} />
+              <Image onClick={() => { setObjetoPlayer((prev) => ({ ...prev, team: 'Black' })), actionSelecionar(6) }} id={6} className={`${styleAddP.imgs_team} ${teamSelecionado === 6 ? styleAddP.time_selecionado : classEscurecer}`} width={48} height={48} src={'/images/team/teamBlack.png'} />
             </div>
           )
         }
@@ -189,7 +191,7 @@ export default function AddPlayers() {
               :
               (<>
                 {elementosBank()}
-                {elementosPlayers()}
+                {elementosPlayers().reverse()}
               </>)}
           </div>
           <button onClick={() => setBtnDeletarTodosPlayers(true)} className={styleAddP.botao_resetar}>Resetar</button>
