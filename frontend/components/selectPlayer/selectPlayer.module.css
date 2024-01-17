@@ -101,8 +101,6 @@
   cursor: pointer;
 }
 .card_received_true{
-  
-  background-color: #382C6E;
   box-shadow: 0px 0px 80px 0px #9784ed inset;
   display: block;
   width: 360px;

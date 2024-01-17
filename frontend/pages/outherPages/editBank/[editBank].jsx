@@ -1,10 +1,11 @@
 import Header from '@/components/Header/header'
-import styleEdicao from './editPlayer.module.css'
+import styleEdicao from './editBank.module.css'
 import { useRouter } from 'next/router'
 import CardPlayerSetings from '@/components/cardPlayerSettings/cardPlayerSttings'
 import InputBar from '@/components/inputBar/inputBar'
 import { useEffect, useState } from 'react'
 import ApiBanco from '@/services/bancoApi'
+import NavbarOpitions from '@/components/navbarOpitions/navbarOpitions'
 
 export default function Edicao() {
   const router = useRouter();
@@ -85,7 +86,7 @@ export default function Edicao() {
 
   return (
     <section className={styleEdicao.section_global}>
-      <Header iconAction={3} />
+      <Header iconAction={true} />
       <main className={styleEdicao.main}>
         <div style={{display: displayCardMessagem}} className={styleEdicao.card_resposta_api}>
         <p>{messageCard}</p>
@@ -112,6 +113,7 @@ export default function Edicao() {
         <p className={styleEdicao.messagem_error}>{messageError}</p>
         <button onClick={()=>setBotaoEdit(true)} className={styleEdicao.botao_salvar_alteracoes}>Salvar Alterações</button>
       </main>
+      <NavbarOpitions color={4}/>
     </section>
   )
 }

@@ -2,7 +2,10 @@
   width: 360px;
   min-height: 800px;
   margin: auto;
-  background-color: #382C6E;
+  background-image: url('/images/backgrounds/backgroundSettings.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .div_jogadores{
   padding-bottom: 30px;

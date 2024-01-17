@@ -52,7 +52,7 @@ export default function Settings(){
 
   return(
     <section className={styleSettings.section_global}>
-      <Header iconAction={3}/>
+      <Header />
       <main className={styleSettings.main}>
         <div className={styleSettings.div_bancos}>
           <h1 className={styleSettings.h1_jogadores}>Bancos:</h1>

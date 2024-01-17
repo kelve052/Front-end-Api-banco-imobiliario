@@ -5,13 +5,13 @@ import { useRouter } from "next/router"
 
 export default function Header (props){
   //PROPS->
-  //[iconAction] alter icon of action in header [2 / 3]
+  //[iconAction] alter icon of action in header [false,true]
 
-  let srcImage = "/images/icons/settings.png"
+  let srcImage = "/images/icons/arow_return.png"
   let link = "/outherPages/settings/settings"
-  if(props.iconAction == 2){// altera icone de configuração para play
-    srcImage = "/images/icons/play.png"
-    link = "/outherPages/transactions/transactions"
+  let displayImg = 'none'
+  if(props.iconAction == true){// altera icone de configuração voltar
+    displayImg = ''
   }
   return(
     <header className={styleHeader.header}>
@@ -20,7 +20,7 @@ export default function Header (props){
         <h1 className={styleHeader.h1}>Banco Imobiliário</h1>
       </div>
       <Link href={link}>
-        <Image alt="icon-settings" className={styleHeader.iconSettings} src={srcImage} width={20} height={20}/>
+        <Image style={{display: displayImg}} alt="icon-settings" className={styleHeader.iconSettings} src={srcImage} width={20} height={20}/>
       </Link>
     </header>
   )

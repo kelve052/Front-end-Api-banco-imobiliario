@@ -6,6 +6,7 @@ import InputBar from '@/components/inputBar/inputBar'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Api from '@/services/playerApi'
+import NavbarOpitions from '@/components/navbarOpitions/navbarOpitions'
 
 export default function Edicao() {
   const router = useRouter();
@@ -75,7 +76,7 @@ export default function Edicao() {
 
   return (
     <section className={styleEdicao.section_global}>
-      <Header iconAction={3} />
+      <Header iconAction={true} />
       <main className={styleEdicao.main}>
         <div style={{ display: displayCardMessagem }} className={styleEdicao.card_resposta_api}>
           <p>{messageCard}</p>
@@ -129,6 +130,7 @@ export default function Edicao() {
         <p className={styleEdicao.messagem_error}>{messageError}</p>
         <button onClick={() => setBotaoEdit(true)} className={styleEdicao.botao_salvar_alteracoes}>Salvar Alterações</button>
       </main>
+      <NavbarOpitions color={4} />
     </section>
   )
 }
