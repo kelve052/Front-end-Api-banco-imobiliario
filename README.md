@@ -1,7 +1,7 @@
 # Sistema de gerenciamente de trasações de jogadores de de um bamco imobiliário
 
 API em Node.js usando Express.
-Front-end usando next. (readme está dentro de frontend/[Readme](frontend/README.md))
+Front-end usando next.js (readme está dentro de frontend/[Readme](frontend/README.md))
 
 Sistema que realiza o gerenciamento de jogadores do jogo Banco Imobiliário.
 - Cadastro de players
@@ -24,16 +24,16 @@ Sistema que realiza o gerenciamento de jogadores do jogo Banco Imobiliário.
   - [Banco](#banco)
   - [Registro](#registro)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Exemplos](#exemplos)
 - [Testes](#testes)
 - [Figma](#figma)
-- [Autores](#autores)
+- [Autor](#autores)
 
 ## Instalação
 
 ```bash
 git clone https://github.com/kelve052/api-banco-imobiliario.git
 cd api-banco-imobiliario
+cd api
 npm install
 npm start
 ```
@@ -195,16 +195,39 @@ Para utilizar a API, envie requisições HTTP para os seguintes endpoints:
 ## Estrutura do Projeto
 
 ```
-src
-    ├───controllers
-    ├───database
-    ├───middleware
-    ├───model
-    ├───repositories
-    ├───router
-    └───services
-├── aplicacao.js
-└── server.js
+├───api
+│   └───src
+│       ├───Controllers
+│       ├───Database
+│       ├───middleware
+│       ├───Model
+│       ├───Repositories
+│       ├───Router
+│       └───Services
+└───frontend
+    ├───components
+    │   ├───cardPlayerSettings
+    │   ├───Header
+    │   ├───historic
+    │   ├───HomeCards
+    │   ├───inputBar
+    │   ├───navbarOpitions
+    │   └───selectPlayer
+    ├───pages
+    │   └───outherPages
+    │       ├───addplayers
+    │       ├───editBank
+    │       ├───editPlayer
+    │       ├───settings
+    │       └───transactions
+    ├───public
+    │   └───images
+    │       ├───backgrounds
+    │       ├───cursor
+    │       ├───icons
+    │       └───team
+    ├───services
+    └───styles
 ```
 
 ## Testes
@@ -214,5 +237,5 @@ Infelizmente, o projeto ainda não possui testes!
 ## Figma
 https://www.figma.com/file/UdCIXdqjEwe1PuSxsYkala/Untitled?type=design&node-id=0%3A1&mode=design&t=94urJ4ptsliXfpfq-1
 
-## Autores
+## Autor
 - [@Kelve Oliveira](https://github.com/kelve052)
