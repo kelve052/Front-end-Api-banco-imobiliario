@@ -3,6 +3,6 @@
   "name": "front-End",
   "builds": [
     { "src": "api/src/aplicacao.js", "use": "@vercel/node" },
-    { "src": "frontend", "use": "@vercel/next" }
+    { "src": "frontend/pages", "use": "@vercel/next" }
   ]
 }
