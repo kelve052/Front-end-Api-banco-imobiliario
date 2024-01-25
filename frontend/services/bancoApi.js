@@ -3,7 +3,7 @@ import axios from "axios";
 class ApiBanco{
   constructor(){
     this.server = axios.create({
-      baseURL: 'http://localhost:4000'
+      baseURL:  process.env.NEXT_PUBLIC_API_URL
     })
   }
   listarBancos = async ()=>{
