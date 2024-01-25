@@ -3,6 +3,6 @@
   "name": "front-End",
   "builds": [
     { "src": "package.json", "use": "@vercel/node" },
-    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+    { "src": "frontend", "use": "@vercel/static-build" }
   ]
 }
