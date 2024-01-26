@@ -3,7 +3,7 @@ import axios from "axios";
 class RegistroApi {
   constructor() {
     this.server = axios.create({
-      baseURL:  process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
+      baseURL: "https://api-banco-imobiliario-tawny.vercel.app/"
     });
   }
 
