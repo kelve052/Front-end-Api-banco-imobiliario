@@ -11,6 +11,9 @@ export  default aplicacao
 
 aplicacao.use(cors('https://front-end-banco-imobiliario.vercel.app/'))
 aplicacao.use(express.json())
+aplicacao.get('/', (req, res)=>{
+  res.json({teste: 'teste'}) 
+})
 aplicacao.use('/', router)
 
 
