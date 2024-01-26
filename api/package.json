@@ -4,6 +4,9 @@
   "description": "sistema que realiza o gerenciamento dos players do jogo banco imobiliario",
   "main": "src/aplicacao.js",
   "type": "module",
+  "engines": {
+    "node": "20.10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/aplicacao.js"
