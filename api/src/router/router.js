@@ -1,9 +1,9 @@
 import express from "express";
 import {playersGet, playersPost, playerUpdate, PlayerDelete, deleteAllPlayers} from "../controllers/controllersPlayers.js";
-import auth from "../Controllers/contollerAuth.js";
+import auth from "../controllers/contollerAuth.js";
 import authentication from "../middleware/authentication.js";
-import { getRegister, postRegister, deleteRegisterAll} from "../Controllers/controllerRegister.js";
-import { getBank, postBank, putBank, deleteBank, deleteBankAll} from "../Controllers/constrollerBank.js";
+import { getRegister, postRegister, deleteRegisterAll} from "../controllers/controllerRegister.js";
+import { getBank, postBank, putBank, deleteBank, deleteBankAll} from "../controllers/constrollerBank.js";
 
 const router = express.Router()
 
