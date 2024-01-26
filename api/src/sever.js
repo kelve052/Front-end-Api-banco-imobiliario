@@ -8,6 +8,6 @@ export const start = async () => {
     await connectDB(process.env.MONGO_URI);
     const server = aplicacao.listen(port, () => console.log(`Server online on port ${port}`));
   } catch (error) {
-    console.log('Error connecting:', error);
+    console.log('Error connecting: ', error);
   }
 };
