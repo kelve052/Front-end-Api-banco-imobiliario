@@ -2,7 +2,7 @@
   "name": "api-banco-imobiliario",
   "version": "1.0.0",
   "description": "sistema que realiza o gerenciamento dos players do jogo banco imobiliario",
-  "main": "index.js",
+  "main": "api/src/aplicacao.js",
   "type": "module",
   "scripts": {
     "vercel-build": "next build",

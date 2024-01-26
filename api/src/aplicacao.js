@@ -9,7 +9,7 @@ dotenv.config()
 const aplicacao = express()
 export  default aplicacao
 
-aplicacao.use(cors())
+aplicacao.use(cors('https://front-end-banco-imobiliario.vercel.app/'))
 aplicacao.use(express.json())
 aplicacao.use('/', router)
 
