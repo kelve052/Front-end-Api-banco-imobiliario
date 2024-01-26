@@ -1,13 +1,9 @@
 {
   "name": "api-banco-imobiliario",
-  "version": "2",
+  "version": "1.0.0",
   "description": "sistema que realiza o gerenciamento dos players do jogo banco imobiliario",
   "main": "src/aplicacao.js",
   "type": "module",
-
-
-  "routes": [{ "src": "/.*", "dest": "/api/src/Router/index.js" }],
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/aplicacao.js"
