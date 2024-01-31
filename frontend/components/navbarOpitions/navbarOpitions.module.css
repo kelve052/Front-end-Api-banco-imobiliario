@@ -6,9 +6,10 @@
   justify-content: center;
   column-gap: 48px;
   position: fixed;
-  bottom: 0;
-  width: 360px;
+  bottom: 0; 
+  width: inherit;
 }
+
 
 .icons:hover{
   margin-bottom: 10px;
