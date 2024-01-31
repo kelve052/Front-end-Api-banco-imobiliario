@@ -1,5 +1,5 @@
 .index{
-  width: 360px;
+  width: 100%;
   min-height: 800px;
   margin: auto;
   background-image: url('/images/backgrounds/fundoHome.png');
@@ -33,4 +33,10 @@
 }
 .div_bloco_cards{
   padding-bottom: 70px;
+}
+
+@media (min-width: 400px) {
+  .index{
+    width: 360px;
+  }
 }
