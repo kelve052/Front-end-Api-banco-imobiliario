@@ -147,13 +147,13 @@ export default function AddPlayers() {
   return (
     <section className={styleAddP.section_global}>
       <Header />
-      <h1 className={styleAddP.h1_adiciona_part}>Adicionar participante</h1>
+      <h1 className={styleAddP.h1_adiciona_part}>Adicionar Jogador</h1>
 
       <main className={styleAddP.section_inputs}>
-        <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, name: value }))} name='nome' text="Nome" width={312} placeholder={"arradador42"} />
-        <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, password: value }))} isBanck={checkboxMark} name='senha' text="Senha" width={312} placeholder={"$textd123"} />
+        <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, name: value }))} name='nome' text="Nome" width={312} placeholder={"arrasador42"} />
+        <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, password: value }))} isBanck={checkboxMark} name='senha' text="Senha" width={312} placeholder={"$Senha123"} />
         <div className={styleAddP.div_imput_checkbox}>
-          <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, balance: value }))} name='balance' text="Saldo" placeholder={"$R12.996"} />
+          <InputBar onChange={(value) => setObjetoPlayer((prev) => ({ ...prev, balance: value }))} name='balance' text="Saldo" placeholder={"120.996"} />
           <div className={styleAddP.div_checkbox_p}>
             <span className={styleAddP.span_checkbox}>
               <input checked={checkboxMark} onChange={checkedTrue} className={styleAddP.checkbox} type="checkbox" />

@@ -48,7 +48,7 @@ font is only used in balance teaxt */
   margin: 0;
 }
 .balance .span{
-  color: #000000;
+  color: #00A221;
   text-shadow: #00A221 1px 1px 10px;
 }
 .div_pencil_trash{
@@ -148,3 +148,5 @@ font is only used in balance teaxt */
   .esconderLoder{
     display: none;
   }
+
+  

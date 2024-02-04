@@ -13,7 +13,7 @@ const playersGet = async (req, res) => {
 const playersPost = async (req, res) => {
   try {
     let { name, team, balance, password } = req.body;
-    if (!Number(balance)) {
+    if (!Number(balance) || balance < 0) {
       if (balance == null || balance == 0) {
         balance = 0;
       } else {

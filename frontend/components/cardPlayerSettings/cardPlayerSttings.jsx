@@ -12,6 +12,7 @@ export default function CardPlayerSetings(props) {
   const [linlExibirH, UserLinkExibirH] = useState(false)
   const [botaoDeletarPlayer, setBotaoDeletarPlayer] = useState(false)
   const [listaRegistros, setListaRegistros] = useState([])
+  const [textSaldo, setTextSaldo] = useState('Saldo:')
   const api = new Api
   const apiBanco = new ApiBanco
   const apiRegisters = new RegistroApi
@@ -60,6 +61,9 @@ export default function CardPlayerSetings(props) {
         setListaRegistros(['Nenhum PLayer encontrado'])
       }
     }
+    if(props.styleComponent == 2){
+      setTextSaldo('')
+    }
     fetchData()
   }, [])
 
@@ -105,6 +109,7 @@ export default function CardPlayerSetings(props) {
   //[id] id of player for delete adn edit
   //[isBank] for user id delete banck
 
+  
   return (
     <div className={`${styleCardP.cardPlayerSettings} ${props.styleComponent == 2 || props.styleComponent == 3 ? `${styleCardP.retirar_background}` : ''}`}>
       <div className={styleCardP.blockAll}>
@@ -113,7 +118,7 @@ export default function CardPlayerSetings(props) {
             <Image alt="icon profile" className={styleCardP.photoProfile} src={props.img} width={48} height={48} />
             <div className={`${styleCardP.div_name_balance} ${props.styleComponent == 2 ? `${styleCardP.div_name_balance_pageAdd}` : ''} ${props.styleComponent == 3 ? `${styleCardP.div_name_balance_pageTrasac}` : ''}`}>
               <p className={styleCardP.name}>{props.name}</p>
-              <p className={styleCardP.balance}>Saldo: <sapn className={styleCardP.span}>R${props.balance}</sapn></p>
+              <p className={styleCardP.balance}>{textSaldo} <sapn className={styleCardP.span}>R${props.balance}</sapn></p>
             </div>
           </div>
           <div className={styleCardP.div_pencil_trash}>
